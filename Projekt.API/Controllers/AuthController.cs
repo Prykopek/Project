@@ -26,6 +26,7 @@ namespace Projekt.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
+
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower(); // znaki duże w loginie niewazne, zeby nie było duplikatow
 
             if (await _repo.UserExists(userForRegisterDto.Username))
