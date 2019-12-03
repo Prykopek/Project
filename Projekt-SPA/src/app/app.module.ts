@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -10,6 +11,11 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { MealComponent } from './meal/meal.component';
+import { DietComponent } from './diet/diet.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { appRoutes } from './routes';
+
 
 @NgModule({
    declarations: [
@@ -17,19 +23,23 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
       // dodanepostworzeniucomponentuvalue,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      MealComponent,
+      DietComponent,
+      CalculatorComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
       ErrorInterceptorProvider
    ],
-   // bootstrapowanie angularcomponents
+   // bootstrapowanieangularcomponents
    bootstrap: [
       AppComponent
    ]

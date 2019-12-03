@@ -1,18 +1,18 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
   <div class="container">
-      <a class="navbar-brand" href="#">Poradnia dietetyczna</a>
+      <a class="navbar-brand" [routerLink]="['/home']">Poradnia dietetyczna</a>
   
 
   
       <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Posiłki </a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/meal']" >Posiłki </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Lista</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/diet']">Dieta</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">tez cos wstawic</a>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/calculator']">Kalkulator</a>
         </li>
       </ul>
   
