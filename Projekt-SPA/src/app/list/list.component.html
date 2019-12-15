@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <button class="btn btn-success" [routerLink]="['/addproduct']" type="submit">Dodaj Produkt</button>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="searchText" placeholder="Wpisz nazwę" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Wyszukaj</button>
+    </form>
+  </nav>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Kcal</th>
+      <th>Białko</th>
+      <th>Tłuszcz</th>
+      <th>Cukier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products| filter:searchText | paginate:{itemsPerPage:10, currentPage: p}">
+      <td [routerLink]="['/meal', product.id]">{{product.name}}</td>
+      <td>{{product.kcal}}</td>
+      <td>{{product.protein}}</td>
+      <td>{{product.fat}}</td>
+      <td>{{product.sugar}}</td>
+    </tr>
+  </tbody>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>

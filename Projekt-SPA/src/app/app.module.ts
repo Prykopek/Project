@@ -15,23 +15,31 @@ import { MealComponent } from './meal/meal.component';
 import { DietComponent } from './diet/diet.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { appRoutes } from './routes';
+import { ListComponent } from './list/list.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AddProductComponent } from './addProduct/addProduct.component';
+
 
 
 @NgModule({
    declarations: [
       AppComponent,
-      // dodanepostworzeniucomponentuvalue,
       NavComponent,
       HomeComponent,
       RegisterComponent,
       MealComponent,
       DietComponent,
-      CalculatorComponent
+      CalculatorComponent,
+      ListComponent,
+      AddProductComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      Ng2SearchPipeModule,
+      NgxPaginationModule,
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes)
    ],
@@ -39,7 +47,6 @@ import { appRoutes } from './routes';
       AuthService,
       ErrorInterceptorProvider
    ],
-   // bootstrapowanieangularcomponents
    bootstrap: [
       AppComponent
    ]

@@ -37,9 +37,12 @@ namespace Projekt.API
             //services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             var dbConnectionString = @"Server=(localdb)\mssqllocaldb;Database=Projekt;Trusted_Connection=True;";
             services.AddDbContext<DataContext>(options => options.UseSqlServer(dbConnectionString));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(opt => {
+                opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
             services.AddCors(); // bezpieczenstwo, udostepnianie innym
-            services.AddScoped<IAuthRepository, AuthRepository>(); // tworzy instancje repository, argumenty to interfejs i implementacja
+            services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>(); // tworzy instancje repository, argumenty to interfejs i implementacja
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {

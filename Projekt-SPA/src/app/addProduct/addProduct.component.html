@@ -1,0 +1,32 @@
+<div class="container mt-4">
+<form #registerForm="ngForm" (ngSubmit)="addproduct()">
+  <h2 class="text-center text-primary">Dodaj Produkt</h2>
+  <hr>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="name" [(ngModel)]="model.name" placeholder="Name">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="kcal" [(ngModel)]="model.kcal" placeholder="Kcal">
+  </div>
+  
+  <div class="form-group">
+    <input type="text" class="form-control" required name="protein" [(ngModel)]="model.protein" placeholder="Protein">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="fat" [(ngModel)]="model.fat" placeholder="Fat">
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="sugar" [(ngModel)]="model.sugar" placeholder="Sugar">
+  </div>
+
+  <div class="form-group text-center">
+    <button class="btn btn-success" type="submit">Dodaj</button>
+    <button class="btn btn-default" [routerLink]="['/list']" type="submit">Wróc</button> 
+  </div>
+  
+</form>
+</div>

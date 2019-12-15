@@ -1,36 +1,18 @@
-<p>
-  meal works!
-jkghkghjkjh
-</p>
-<p>
-  meal works!
-jkghkghjkjh
-</p>
-
-<p>
-</p>
-
-<p>
-  meal works!
-jkghkghjkjh
-</p>
-
-<p>
-  meal works!
-jkghkghjkjh
-</p>
-
-<p>
-  meal works!
-jkghkghjkjh
-</p>
-
-<p>
-  meal works!
-jkghkghjkjh
-</p>
-
-<p>
-  meal works!
-jkghkghjkjh
-</p>
+<div class="container">
+    <div style="text-align: center">
+      <h1 class="mt-5">{{todayDate | date:'fullDate'}} </h1>
+      <p class="mt-1">Dzisiejsze posiłki:</p>
+      <div class="container-fluid-nav text-center">
+          <nav class="navbar-light bg-light nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/list']">Dodaj posiłek</a>
+          </nav>
+        </div>
+      
+      <div class="row mt-5">
+        <div class="col-3">Kcal</div>
+        <div class="col-3">Białko</div>
+        <div class="col-3">Tłuszcz</div>
+        <div class="col-3">Cukier</div>
+      </div>
+    </div>
+  

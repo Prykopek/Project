@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meal.component.css']
 })
 export class MealComponent implements OnInit {
+  todayDate: Date = new Date();
+  listMode = false;
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  listToggle() {
+    this.listMode = !this.listMode;
+  }
+
 
 }

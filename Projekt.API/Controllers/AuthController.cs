@@ -36,7 +36,10 @@ namespace Projekt.API.Controllers
             // tworzenie nowego usera
             var userToCreate = new User
             {
-                Username = userForRegisterDto.Username
+                Username = userForRegisterDto.Username,
+                Email = userForRegisterDto.Email,
+                Height = userForRegisterDto.Height,
+                Weight = userForRegisterDto.Weight
             };
 
             var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);

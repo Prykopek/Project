@@ -1,3 +1,24 @@
-<p>
-  calculator works!
-</p>
+<div class="container mt-5">
+<h2 class="text-center text-primary">Kalkulator BMI</h2>
+<hr>
+<div >
+<br>
+<div class="text-center">
+    <div class="form-group">
+        <input type="number"  id="firstNumber"  placeholder="Wzrost" class="form-control" #first>
+        <input type="number"  id="secondNumber"  placeholder="Waga" class="form-control" #second>
+        <br>
+        <button type="submit" (click) = 'calculate(first.value, second.value)'>Oblicz</button> 
+        <br> 
+        <h4 class="text-align-center"><b></b></h4> 
+        <div *ngIf="sum < 18.5">Kiedy Twój wskaźnik BMI jest poniżej 18,5 to występuje duże prawdopodobieństwo że masz niedowagę. Musisz wiedzieć o tym, że bardzo niska masa ciała wiąże się z występowaniem wielu chorób, a w konsekwencji może doprowadzić do anoreksji. Dlatego pamiętaj, że odpowiednio skomponowane posiłki, dopasowane pod względem zawartości kalorii do potrzeb Twojego organizmu, będą dostarczały niezbędne składniki odżywcze, zapobiegając tym samym dalszej utracie masy ciała, jednocześnie nie powodując jej nadmiernego wzrostu. Dieta taka zmniejszy również ryzyko wystąpienia chorób, związanych z bardzo niską masą ciała.</div>
+        <div *ngIf="sum >= 18.5 && sum < 25">GRATULACJE! Twój BMI to: {{sum}} oznacza to, że masz idealną masę ciała. Jednak, aby Twoje BMI nadal pozostało w tym przedziale zastanów się nad sposobem swojego odżywiania, staraj się stosować do zaleceń racjonalnego sposobu żywienia oraz kontrolować ilość spożywanych kalorii, a utrzymasz swoją aktualną masę ciała. Musisz również zwrócić szczególną uwagę na poziom swojej aktywności fizycznej, jeśli jest niski (mniej niż 30 minut dziennie), postaraj się więcej czasu poświęcać na ćwiczenia, które w połączeniu ze zdrowym odżywianiem pozwolą Ci kontynuować swój sukces.</div>
+        <div *ngIf="sum >= 25 && sum < 30">BMI powyżej 25 oznacza nadwagę i jest sygnałem alarmowym. To jest najwyższy czas, aby zmienić swój sposób odżywiania, głównie ograniczyć ilość kalorii w spożywanych posiłkach, a także wyeliminować podjadanie pomiędzy posiłkami, co pozwoli zminimalizować ryzyko przybierania na wadze. Pamiętaj, aby jeść mniej, ale częściej, pić dużo wody i zwiększyć swoją aktywność fizyczną, co znacznie ułatwi utratę zbędnych kilogramów. Wraz z nadmiernym wzrostem masy ciała rośnie ryzyko chorób dietozależnych, dlatego odpowiednio wcześniej zaplanuj swój proces odchudzania.</div>
+        <div *ngIf="sum >= 30 && sum < 35">BMI powyżej 30 to otyłość I stopnia, wraz ze wzrostem masy ciała rośnie ryzyko niedokrwiennej choroby serca, nadciśnienia tętniczego, cukrzycy, choroby zwyrodnieniowej układu kostno-stawowego. Jak zapewne wiesz otyłość wynika z nadmiernej ilości spożywanej żywności, dlatego zastanów się w jaki sposób możesz ograniczyć ilość przyjmowanego pożywienia. Gdy sam/a nie dajesz sobie rady zgłoś się o pomoc do dietetyka, z którym razem zaplanujecie odpowiednią dla potrzeb Twojego organizmu dietę. Staraj się wystrzegać głodówek, które są niebezpieczne dla organizmu, a ich następstwem jest efekt jo-jo.</div>
+        <div *ngIf="sum >= 35 && sum > 40">Gdy Twoje BMI jest powyżej 35 to jest to otyłość II stopnia, a więc niewątpliwie duże jest ryzyko wystąpienia chorób wynikających z nadmiaru tkanki tłuszczowej głównie: cukrzycy typu 2, choroby wieńcowej, nadciśnienia tętniczego, zaburzenia miesiączkowania oraz zakrzepicy żylnej i cellulitu. To jest ostatni moment, abyś zrozumiał/a jak dużą rolę odgrywa stosowanie odpowiedniej diety niskokalorycznej, bogatej w różnorodne posiłki, a także takiej, która pomoże Ci poprawić kondycję i witalność. Na tym etapie rozwoju stopnia otyłości musisz wiedzieć jak poważne są konsekwencje tej choroby i że z otyłością trzeba walczyć, a nie ją bagatelizować.</div> 
+        <div *ngIf="sum > 40">Jeśli Twoje BMI jest powyżej 40 to świadczy to o otyłości III stopnia. W takiej sytuacji zgłoś się do odpowiedniego specjalisty, który, poza dietą i odpowiednimi ćwiczeniami przepisze Ci leki przyspieszające spalanie tkanki tłuszczowej. Jednak musisz pamiętać, że podstawę Twojej terapii odchudzającej musi stanowić dieta oraz duża aktywność fizyczna. W takiej sytuacji ważne jest również wsparcie najbliższych osób, dlatego staraj się, aby w Twoim otoczeniu byli ludzie, którzy będą Cię wspierać.</div>         
+      </div>
+    </div>
+  </div>
+  </div>
+  
